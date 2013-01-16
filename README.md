@@ -1,0 +1,4 @@
+slideshow-example
+=================
+
+Slideshow module
