@@ -1,7 +1,7 @@
 ﻿/*
 * NJSF Slideshow lite 
 */
-NJSF = {};
+NJSF = NJSF || {};
 NJSF.components = NJSF.components || {}
 NJSF.components.Slideshow = function () {
     return {
