@@ -174,21 +174,8 @@ NJSF.components.Slideshow.views.SlidesView = function (options) {
         this.updateActiveSlide(activeSlideId);
     }
 
-    this.hasCSS3TransitionSupport = function() {
-                var s = document.body.style,
-        supportsTransitions =   'WebkitTransition' in s ||
-                            'MozTransition' in s ||
-                            'msTransition' in s ||
-                            'OTransition' in s ||
-                            'Transition' in s;
-
-                            return supportsTransitions;
-    }
-
     this.updateActiveSlide = function (activeSlideIndex) {
-
-
-        if(this.hasCSS3TransitionSupport()) {
+        if(NJSF.helpers.animation.hasCSS3TransitionSupport()) {
             $("#slidecontainer > div.active").removeClass('active');
             $("#slidecontainer > div").eq(activeSlideIndex).addClass('active');
         } 
@@ -207,7 +194,7 @@ NJSF.components.Slideshow.views.SlidesView = function (options) {
             });
         }
 
-        if(!this.hasCSS3TransitionSupport()) {
+        if(!NJSF.helpers.animation.hasCSS3TransitionSupport()) {
             
             $("div.slideitem.active").addClass('current');
         }
